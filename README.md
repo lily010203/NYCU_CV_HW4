@@ -216,9 +216,3 @@ EMA inference = disabled
 
 leaderboard screenshot:
 ![Leaderboard Screenshot](Performance_Snapshot.png)
-
-```text
-checkpoints_final/best_model.pth
-```
-
-Best checkpoint selected by training loss in the final all-train setting.
