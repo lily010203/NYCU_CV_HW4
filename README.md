@@ -1,6 +1,7 @@
 # NYCU Computer Vision 2026 HW4
 
 - **Student ID:** 313554063
+- **Name:** 劉霈琳
 - **Task:** Image Restoration for Rain and Snow Degradation
 - **Final Public Score:** 31.36
 
