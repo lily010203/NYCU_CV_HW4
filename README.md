@@ -209,39 +209,13 @@ patch_size = 224
 batch_size = 2
 epochs = 200
 ssim_weight = 0.15
+val_ratio = 0.0
 TTA = enabled
 EMA inference = disabled
 ```
-The final submission was generated using:
 
-- `dim = 64`
-- `patch_size = 224`
-- `batch_size = 2`
-- `epochs = 200`
-- `ssim_weight = 0.15`
-- `val_ratio = 0.0`
-- TTA inference enabled
-- EMA inference disabled
-
-## File Description
-
-```text
-hw4_promptir_final.py
-```
-
-Main training and inference script.
-
-```text
-visualize_hw4_results.py
-```
-
-Script for generating report figures.
-
-```text
-pred.npz
-```
-
-Final prediction file for Kaggle submission.
+leaderboard screenshot:
+![Leaderboard Screenshot](Performance_Snapshot.png)
 
 ```text
 checkpoints_final/best_model.pth
