@@ -12,17 +12,6 @@ The goal is to restore degraded RGB images into clean images and generate the re
 
 The final model is a compact PromptIR-style restoration network. It uses an encoder-decoder transformer architecture with prompt generation blocks, residual learning, Charbonnier loss, edge loss, SSIM loss, and test-time augmentation.
 
-The final submission was generated using:
-
-- `dim = 64`
-- `patch_size = 224`
-- `batch_size = 2`
-- `epochs = 200`
-- `ssim_weight = 0.15`
-- `val_ratio = 0.0`
-- TTA inference enabled
-- EMA inference disabled
-
 ## Environment Setup
 
 The code was tested with Python 3.12 and PyTorch.
@@ -31,18 +20,6 @@ Install the required packages:
 
 ```bash
 pip install numpy pillow tqdm matplotlib torch torchvision
-```
-
-If you use a virtual environment, activate it first:
-
-```bash
-source /home/user/myenv/bin/activate
-```
-
-Then install the dependencies:
-
-```bash
-python -m pip install numpy pillow tqdm matplotlib torch torchvision
 ```
 
 ## Dataset Structure
@@ -139,8 +116,6 @@ The submission file stores each restored image as a NumPy array in `(3, H, W)` f
 EMA weights are saved in the checkpoint for experimental purposes, but the final submission does **not** use EMA inference.
 
 By default, inference uses normal model weights.  
-Do not add `--use_ema` for the final submission.
-
 If you want to test EMA inference manually:
 
 ```bash
@@ -237,6 +212,16 @@ ssim_weight = 0.15
 TTA = enabled
 EMA inference = disabled
 ```
+The final submission was generated using:
+
+- `dim = 64`
+- `patch_size = 224`
+- `batch_size = 2`
+- `epochs = 200`
+- `ssim_weight = 0.15`
+- `val_ratio = 0.0`
+- TTA inference enabled
+- EMA inference disabled
 
 ## File Description
 
@@ -263,8 +248,3 @@ checkpoints_final/best_model.pth
 ```
 
 Best checkpoint selected by training loss in the final all-train setting.
-
-## References
-
-1. V. Potlapalli, S. W. Zamir, S. Khan, and F. S. Khan, "PromptIR: Prompting for All-in-One Blind Image Restoration," Advances in Neural Information Processing Systems, 2023.
-2. S. W. Zamir, A. Arora, S. Khan, M. Hayat, F. S. Khan, M.-H. Yang, and L. Shao, "Restormer: Efficient Transformer for High-Resolution Image Restoration," CVPR, 2022.
